@@ -2,6 +2,7 @@
 
 Model::Model()
 {
+locked=true;
 }
 
 void Model::lock(){

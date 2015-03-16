@@ -15,7 +15,7 @@ public:
     //! Destructor
     virtual ~Model(){}
     //! Boolean responsible for keeping track of system status
-    bool locked = true;
+    bool locked;
 private:
 
 };

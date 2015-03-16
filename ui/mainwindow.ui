@@ -43,7 +43,7 @@ QPushButton {
 background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #B0B0B0, stop: 1 #CCCCCC);
 color:#4c4c4c;
 color:#000000;
-	font: 75 16pt &quot;Sawasdee&quot;;
+	font: 75 16pt &quot;Oxygen Mono&quot;;
 }
 QPushButton:pressed {
 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #7E89A6, stop: 1 #7F99B6);
@@ -102,7 +102,7 @@ color:#4c4c4c;
         </property>
         <property name="font">
          <font>
-          <family>Sawasdee</family>
+          <family>Oxygen Mono</family>
           <pointsize>16</pointsize>
           <weight>9</weight>
           <italic>false</italic>
@@ -127,7 +127,7 @@ color:#4c4c4c;
         </property>
         <property name="font">
          <font>
-          <family>Sawasdee</family>
+          <family>Oxygen Mono</family>
           <pointsize>16</pointsize>
           <weight>9</weight>
           <italic>false</italic>
@@ -152,7 +152,7 @@ color:#4c4c4c;
         </property>
         <property name="font">
          <font>
-          <family>Sawasdee</family>
+          <family>Oxygen Mono</family>
           <pointsize>16</pointsize>
           <weight>9</weight>
           <italic>false</italic>
@@ -180,7 +180,7 @@ color:#4c4c4c;
         </property>
         <property name="font">
          <font>
-          <family>Sawasdee</family>
+          <family>Oxygen Mono</family>
           <pointsize>16</pointsize>
           <weight>9</weight>
           <italic>false</italic>
@@ -205,7 +205,7 @@ color:#4c4c4c;
         </property>
         <property name="font">
          <font>
-          <family>Sawasdee</family>
+          <family>Oxygen Mono</family>
           <pointsize>16</pointsize>
           <weight>9</weight>
           <italic>false</italic>
@@ -230,7 +230,7 @@ color:#4c4c4c;
         </property>
         <property name="font">
          <font>
-          <family>Sawasdee</family>
+          <family>Oxygen Mono</family>
           <pointsize>16</pointsize>
           <weight>9</weight>
           <italic>false</italic>
@@ -255,7 +255,7 @@ color:#4c4c4c;
         </property>
         <property name="font">
          <font>
-          <family>Sawasdee</family>
+          <family>Oxygen Mono</family>
           <pointsize>16</pointsize>
           <weight>9</weight>
           <italic>false</italic>
@@ -280,7 +280,7 @@ color:#4c4c4c;
         </property>
         <property name="font">
          <font>
-          <family>Sawasdee</family>
+          <family>Oxygen Mono</family>
           <pointsize>16</pointsize>
           <weight>9</weight>
           <italic>false</italic>
@@ -305,7 +305,7 @@ color:#4c4c4c;
         </property>
         <property name="font">
          <font>
-          <family>Sawasdee</family>
+          <family>Oxygen Mono</family>
           <pointsize>16</pointsize>
           <weight>9</weight>
           <italic>false</italic>
@@ -330,7 +330,7 @@ color:#4c4c4c;
         </property>
         <property name="font">
          <font>
-          <family>Sawasdee</family>
+          <family>Oxygen Mono</family>
           <pointsize>16</pointsize>
           <weight>9</weight>
           <italic>false</italic>
@@ -345,55 +345,41 @@ color:#4c4c4c;
         </property>
        </widget>
       </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="btn_lock">
+      <item row="3" column="0">
+       <widget class="QPushButton" name="nstar">
         <property name="maximumSize">
          <size>
           <width>60</width>
           <height>31</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Oxygen Mono</family>
+          <pointsize>16</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>lock.png</normaloff>lock.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>24</width>
-          <height>24</height>
-         </size>
+         <string>*</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="btn_unlock">
+      <item row="3" column="2">
+       <widget class="QPushButton" name="npound">
         <property name="maximumSize">
          <size>
           <width>60</width>
           <height>31</height>
          </size>
         </property>
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
-        </property>
         <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>unlock.png</normaloff>unlock.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>24</width>
-          <height>24</height>
-         </size>
+         <string>#</string>
         </property>
        </widget>
       </item>
@@ -433,6 +419,91 @@ color:#4c4c4c;
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
+    <widget class="QWidget" name="gridLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>50</y>
+       <width>109</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="optionsGrid" rowstretch="0,0,0,0,0" rowminimumheight="0,0,0,0,0">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="btn_lock">
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>Arm</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="btn_unlock">
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>Test</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton">
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Walk</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Opt</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
   <action name="actionItem">
@@ -441,8 +512,6 @@ color:#4c4c4c;
    </property>
   </action>
  </widget>
- <resources>
-  <include location="lock.png"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

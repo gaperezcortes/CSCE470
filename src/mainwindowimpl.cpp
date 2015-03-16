@@ -15,7 +15,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 }
 
 void MainWindowImpl::quit(){
-    n9->setText("ok");
+    //n9->setText("ok");
     connect(n8, SIGNAL(released()), this, SLOT(quit()));
     std::cout << "PRINT" << std::endl;
 }

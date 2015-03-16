@@ -1,0 +1,54 @@
+#include "rfmanager.h"
+#include <vector>
+#include <time.h>
+#include <iostream>
+#include <string>
+
+RFManager::RFManager()
+{
+// insert read the list of transmitter ID's
+    transmitters = std::vector<transmitter>();
+    transmitter one = transmitter("1000");
+    // start counting time from now
+    timespec time_now;
+    clock_gettime(CLOCK_REALTIME, &time_now);
+    transmitter *t;
+    for (unsigned int i = 0; i < transmitters.size(); i++)
+            {
+                t = &transmitters[i];
+                t->timestamp = time_now;
+            }
+    transmitters.push_back(one);
+    delete t;
+}
+
+RFManager::~RFManager()
+{
+
+}
+
+void RFManager::check(std::string id){
+
+    double time_difference;
+    struct timespec time_now;
+    clock_gettime(CLOCK_REALTIME, &time_now);
+
+    transmitter *t;
+            for (unsigned int i = 0; i < transmitters.size(); i++)
+            {
+                t = &transmitters[i];
+                time_difference = ((time_now.tv_sec - t->timestamp.tv_sec)) + ((time_now.tv_nsec - t->timestamp.tv_nsec)*1.0e-9);
+            if(t->id == id){
+                if(time_difference > MAX_DELAY)
+                {
+                    std::cout << t->id << " Exceeded "<<  time_difference << std::endl;
+                    // Tell model something might be wrong
+                }
+                else
+                {
+                    // Do nothing. Keep scanning
+                }
+                break;
+            }
+            }
+}
