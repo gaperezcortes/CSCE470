@@ -5,20 +5,22 @@
 #include "RCSwitch.h"
 #include "rfmanager.h"
 
+class RFManager;
+
+//! RFModule reads messages sent by RF transmitters and passes them to the RFManager
 class RFModule : public Thread
 {
-
 public:
-    RFModule(RFManager);
+    RFModule(RFManager*);
     ~RFModule();
-    void enable();
+    void init();
     void stop();
     void *run();
 
 private:
     bool running;
     RCSwitch mySwitch;
-    RFManager rfm;
+    RFManager *rfm;
 };
 
 #endif // RFMODULE_H

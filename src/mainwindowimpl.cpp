@@ -6,7 +6,7 @@
 #include "model.h"
 #include <string>
 
-MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f) 
+MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
     : QMainWindow(parent, f)
 {
     setupUi(this);
@@ -14,18 +14,18 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
     connect(n9, SIGNAL(released()), this, SLOT(quit()));
 }
 
-void MainWindowImpl::quit(){
+void MainWindowImpl::quit() {
     //n9->setText("ok");
     connect(n8, SIGNAL(released()), this, SLOT(quit()));
     std::cout << "PRINT" << std::endl;
 }
 
-void MainWindowImpl::update(class Observable* observable){
+void MainWindowImpl::update(class Observable* observable) {
 
     Model *model = static_cast<Model*>(observable);
-    if(model->locked){
+    if(model->locked) {
         label->setText("Locked");
-    }else{
+    } else {
         label->setText("Unlocked");
     }
 }

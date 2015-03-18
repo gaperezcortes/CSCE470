@@ -3,6 +3,7 @@
 
 #include <pthread.h>
 
+//! Thread makes implementing multithreading easier to implement with a java-like structure. Requires -pthread compile flag.
 class Thread
 {
   public:

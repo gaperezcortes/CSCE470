@@ -7,13 +7,13 @@ QTController::QTController(QObject *parent) :
 {
 }
 
-void QTController::init_listeners(){
+void QTController::init_listeners() {
     view->connect(view->btn_lock, SIGNAL(released()), this, SLOT(lock()));
     view->connect(view->btn_unlock, SIGNAL(released()), this, SLOT(unlock()));
 }
-void QTController::lock(){
+void QTController::lock() {
     view->label->setText("Locked");
 }
-void QTController::unlock(){
+void QTController::unlock() {
     view->label->setText("Unlocked");
 }

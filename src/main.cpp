@@ -18,11 +18,10 @@
 //! Main method ties together the software using the MVC design pattern
 int main(int argc, char ** argv)
 {
-  QApplication app( argc, argv );
+    QApplication app( argc, argv );
     MainWindowImpl win;
     //! The MVC design pattern is practiced here
     Model model = Model();
-
 
     QTController controller;
     controller.model = &model;
@@ -32,15 +31,18 @@ int main(int argc, char ** argv)
     //! Show the application GUI
     win.show();
 
-	app.connect( &app, SIGNAL( lastWindowClosed() ), &app, SLOT( quit() ) );
+    app.connect( &app, SIGNAL( lastWindowClosed() ), &app, SLOT( quit() ) );
 
     controller.init_listeners();
 
-RFManager rfm = RFManager();
-RFModule rf = RFModule(rfm);
-rf.enable();
-rf.start();
+    RFManager *rfm = new RFManager();
+    RFModule rf = RFModule(rfm);
+    rfm->set_model(&model);
+
+    model.set_RFModule(&rf);
+    model.stop_alarm_and_continue();
+
+    std::cout << "Exitting...";
 
     return app.exec();
-    pthread_join(t,NULL);
 }
