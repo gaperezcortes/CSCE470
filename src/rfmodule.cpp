@@ -35,11 +35,11 @@ void RFModule::init() {
 
 void *RFModule::run() {
     running = true;
-
+	usleep(2000000);
     while(running) {
         if (mySwitch.available()) {
             int value = mySwitch.getReceivedValue();
-            std::string message = std::bitset< 24 >(value).to_string();
+            //std::string message = std::bitset< 24 >(value).to_string();
             if (value == 0) {
                 printf("Unknown encoding");
             } else {
@@ -47,11 +47,13 @@ void *RFModule::run() {
                        char* datetime = ctime(&now);
                        std::cout << datetime;
                        std::cout <<": Received "<< message.substr(19,4) <<std::endl;*/
-                rfm->update_time(message.substr(19,4));
+                //rfm->update_time(message.substr(19,4));
+                rfm->update_time(value);
             }
             mySwitch.resetAvailable();
         }
-        usleep(750000);
+        //usleep(750000);
+	usleep(10000);
         rfm->check();
     }
     return NULL;

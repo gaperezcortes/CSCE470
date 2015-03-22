@@ -12,7 +12,7 @@ public:
     //! Add and Observer object to the vector
     void addObserver(class Observer*); //! Observer to be added
     //! Notify all the Observers
-    void notifyObserver();
+    void notifyObservers();
     //! Contains the Observer objects
     std::vector<class Observer*> observers;
 };

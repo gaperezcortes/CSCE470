@@ -433,7 +433,7 @@ color:#4c4c4c;
        <number>0</number>
       </property>
       <item row="1" column="0">
-       <widget class="QPushButton" name="btn_lock">
+       <widget class="QPushButton" name="btn_arm">
         <property name="maximumSize">
          <size>
           <width>60</width>
@@ -455,7 +455,7 @@ color:#4c4c4c;
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QPushButton" name="btn_unlock">
+       <widget class="QPushButton" name="btn_test">
         <property name="maximumSize">
          <size>
           <width>60</width>
@@ -477,7 +477,7 @@ color:#4c4c4c;
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="btn_walk">
         <property name="maximumSize">
          <size>
           <width>60</width>
@@ -490,7 +490,7 @@ color:#4c4c4c;
        </widget>
       </item>
       <item row="4" column="0">
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="btn_options">
         <property name="maximumSize">
          <size>
           <width>60</width>

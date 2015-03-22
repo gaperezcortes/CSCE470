@@ -3,41 +3,54 @@
 
 Model::Model()
 {
-    locked=true;
+    armed=true;
     tripped = false;
 }
 
-void Model::lock() {
-    locked=true;
-    notifyObserver();
+bool Model::isArmed(){
+    return armed;
 }
 
-void Model::unlock() {
-    locked=false;
-    notifyObserver();
+void Model::arm() {
+    if(rf!=NULL)
+        rf->start();
+    armed = true;
+    notifyObservers();
+}
+
+void Model::disarm() {
+    if(rf!=NULL)
+        rf->stop();
+    armed = false;
+    notifyObservers();
+}
+
+bool Model::isTripped(){
+    return tripped;
+}
+
+void Model::set_alarm_tripped(bool tripped){
+    this->tripped = tripped;
+    notifyObservers();
+}
+
+void Model::set_RFModule(RFModule* rf){
+    this->rf = rf;
+    this->rf->init();
+    //this->rf->start();
 }
 
 void Model::fire_alarm(){
-    if(!locked)
+    if(!armed)
         return;
-    if(tripped){
-
-    }else{
-        tripped = true;
-        std::cout << "Alarm fired" << std::endl;
+    if(!tripped){
+       set_alarm_tripped(true);
+       rf->stop();
+       std::cout << "Alarm fired" << std::endl;
     }
-
 }
 
-void Model::stop_alarm_and_continue(){
-    if(!locked)
-        return;
-    tripped = false;
-    lock();
-}
-
-void Model::set_RFModule(RFModule*rf){
-    this->rf = rf;
-    this->rf->init();
-    this->rf->start();
+void Model::stop_alarm_and_disable_system(){
+    set_alarm_tripped(false);
+    disarm();
 }

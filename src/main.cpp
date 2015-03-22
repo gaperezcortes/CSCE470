@@ -29,6 +29,8 @@ int main(int argc, char ** argv)
     model.Observable::addObserver((Observer*)&win);
 
     //! Show the application GUI
+    win.setWindowFlags(Qt::FramelessWindowHint);
+    win.setGeometry(0,0,320,240);
     win.show();
 
     app.connect( &app, SIGNAL( lastWindowClosed() ), &app, SLOT( quit() ) );
@@ -40,7 +42,7 @@ int main(int argc, char ** argv)
     rfm->set_model(&model);
 
     model.set_RFModule(&rf);
-    model.stop_alarm_and_continue();
+    model.stop_alarm_and_disable_system();
 
     std::cout << "Exitting...";
 

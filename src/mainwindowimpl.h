@@ -15,9 +15,9 @@ public:
 	MainWindowImpl( QWidget * parent = 0, Qt::WFlags f = 0 );
     //! GUI will update based on any changes to the model
     void update(class Observable*); //! The subject pointer is passed as a parameter to get the changes
-private slots:
-    //! A function to be called by a QObject to quit the program
-    void quit();
+private:
+    void enable_all();
+    void disable_all();
 };
 #endif
 

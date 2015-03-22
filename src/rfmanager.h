@@ -10,15 +10,13 @@ class Model;
 class RFManager
 {
 
-
-
 public:
     //! Struct to keep track of transmitter IDs
     struct transmitter
     {
-        std::string id;
+        unsigned int id;
         timespec timestamp;
-        transmitter(std::string id_in)
+        transmitter(unsigned int id_in)
         {
             id = id_in;
         }
@@ -27,14 +25,13 @@ public:
     RFManager();
     ~RFManager();
     //! Update the timestamp for given transmitter ID
-    void update_time(std::string);
+    void update_time(int);
     //! Check threshold isn't violated
     void check();
-
     void set_model(Model *);
 
 private:
-    std::vector<transmitter> transmitters;
+    std::vector<transmitter*> transmitters;
     double MAX_DELAY; // in seconds
 int miss_count;
 int misses;

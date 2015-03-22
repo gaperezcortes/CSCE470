@@ -4,6 +4,7 @@
 #include <QObject>
 #include "mainwindowimpl.h"
 #include "model.h"
+#include <string>
 
 //! QTController is responsible of handling events from the GUI
 
@@ -15,12 +16,21 @@ public:
     void init_listeners();
     Model *model;
     MainWindowImpl *view;
-
+private:
+    std::string buffer;
+    //! Add number to the pin sequence
+    void append_to_buffer(char ch);
+    void clear_buffer();
 private slots:
     //! Sends lock message to the model
-    void lock();
+    void arm();
     //! Sends unlock message to the model
-    void unlock();
+    void disarm();
+    //! Handles number presses
+    void numkey_pressed();
+    //! Submit the current PIN
+    void submit();
+
 signals:
 
 public slots:
